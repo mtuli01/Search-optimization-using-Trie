@@ -49,8 +49,12 @@ class Trie():
         for s in self.word_list:
             print(s)
         return 1
-keys = ["hello i am mihir","DSU sagar university","good morning qoutes", "it's going to rain now", "i am an intern", "ek tha tiger [2011] HD",
-        "go goa gone[2012]HD ","avengers endgame <3", "helps", "helping","Avnegers endgame <3","arpit nariya life biography"]
+file = open('dictionary.txt','r')
+lines=file.readlines()
+keys=[]
+for data in lines:
+	keys.append(data.strip())
+
 key = input("hello there \nwhat do you want to search for :\n")
 status = ["Not found", "Found"]
 t = Trie()
