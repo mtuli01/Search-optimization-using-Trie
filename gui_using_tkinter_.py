@@ -1,5 +1,4 @@
 from tkinter import *
-file = open('./dictionary.txt')
 
 def SOUT():
     class TrieNode():
@@ -53,8 +52,11 @@ def SOUT():
             for s in self.word_list:
                     la.insert(END,(s + "\n"))
             return 1
-    keys = file.read()
-    keys.split('\n')
+    file = open("dictionary.txt","r")    
+    lines = file.readlines()
+    file.close()
+    for keys in lines :
+        keys=keys.strip()
     key = entry.get()
     status = ["Not found", "Found"]
     t = Trie()
