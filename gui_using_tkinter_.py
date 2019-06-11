@@ -52,11 +52,11 @@ def SOUT():
             for s in self.word_list:
                     la.insert(END,(s + "\n"))
             return 1
-    file = open("dictionary.txt","r")    
-    lines = file.readlines()
-    file.close()
-    for keys in lines :
-        keys=keys.strip()
+    file = open('dictionary.txt','r')
+    lines=file.readlines()
+    keys=[]
+    for data in lines:
+        keys.append(data.strip())
     key = entry.get()
     status = ["Not found", "Found"]
     t = Trie()
@@ -80,7 +80,7 @@ topframe.pack(side = TOP)
 bottomframe= Frame(window)
 scroll=Scrollbar(bottomframe)
 scroll.pack(side=RIGHT, fill=Y)
-la=Text(bottomframe, width=50, height=20, yscrollcommand =scroll.set)
+la=Text(bottomframe, width=100, height=20, yscrollcommand =scroll.set)
 scroll.config(command=la.yview)
 la.pack(side=LEFT, fill=BOTH, expand=1)
 bottomframe.pack()
